@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { selectTodos } from "../../selector/selector";
+
 import { addTodoElement } from "../../actions/actions";
 import TodoElements from "../TodoElements/TodoElements";
+import { useSelector, useDispatch } from "react-redux";
+
 import { Input, Button } from "antd";
 
 import "./Input.css";
@@ -10,7 +11,6 @@ import "antd/dist/antd.css";
 
 const MainInput = () => {
   const [value, setValue] = useState("");
-  const todos = useSelector(selectTodos);
   const dispatch = useDispatch();
 
   console.log("render MainInput");
@@ -36,7 +36,6 @@ const MainInput = () => {
       <Button type="submit" onClick={onSubmit}>
         Submit
       </Button>
-      <TodoElements todos={todos} />
     </div>
   );
 };
