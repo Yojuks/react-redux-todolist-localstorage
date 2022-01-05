@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 
 import { addTodoElement } from "../../actions/actions";
-import TodoElements from "../TodoElements/TodoElements";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import { Input, Button } from "antd";
 
@@ -16,9 +15,8 @@ const MainInput = () => {
   console.log("render MainInput");
 
   const onSubmit = () => {
-    console.log(value);
     if (value) {
-      console.log(dispatch(addTodoElement(value)));
+      dispatch(addTodoElement(value));
     }
     setValue("");
   };

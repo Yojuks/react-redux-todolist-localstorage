@@ -17,7 +17,7 @@ const TodoElement = ({ todo }) => {
 
   return (
     <div className="list-item">
-      <Checkbox onClick={() => toggle(todo.id)} />
+      <Checkbox checked={todo.checked} onClick={() => toggle(todo.id)} />
       <div className={todo.checked ? "toggle" : ""} key={todo.id}>
         {todo.title}
       </div>
