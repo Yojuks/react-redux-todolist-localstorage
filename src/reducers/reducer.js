@@ -1,16 +1,17 @@
 const initialState = {
   tasks: [
-    {
-      title: "first",
-      id: "1",
-      checked: false,
-    },
-    {
-      title: "second",
-      id: "12",
-      checked: false,
-    },
+    // {
+    //   title: "first",
+    //   id: "1",
+    //   checked: false,
+    // },
+    // {
+    //   title: "second",
+    //   id: "12",
+    //   checked: false,
+    // },
   ],
+  visibilityFilters: "all",
 };
 
 export const todosReducer = (state = initialState, action) => {
@@ -32,6 +33,18 @@ export const todosReducer = (state = initialState, action) => {
           todo.id === action.payload ? { ...todo, checked: !todo.checked } : todo
         ),
       };
+    case "SET_FILTER": {
+      return {
+        ...state,
+        visibilityFilters: action.payload,
+      };
+    }
+    case "CLEAR_COMPLETED": {
+      return {
+        ...state,
+        tasks: state.tasks.filter((task) => task.checked === true),
+      };
+    }
     default:
       return state;
   }

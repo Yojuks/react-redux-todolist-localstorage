@@ -18,3 +18,16 @@ export const toggleTodoElement = (id) => {
     payload: id,
   };
 };
+
+export const visibilityFilters = (params) => {
+  return {
+    type: "SET_FILTER",
+    payload: params,
+  };
+};
+
+export const clearCompletedElements = () => {
+  return {
+    type: "CLEAR_COMPLETE",
+  };
+};

@@ -1,30 +1,28 @@
-// import { configureStore } from "@reduxjs/toolkit";
 import { todosReducer } from "../reducers/reducer";
-// import loadState from "../reducers/localStorage";
-// const persistedState = loadState();
-// export const store = configureStore({ reducer: todosReducer });
+import { createStore, applyMiddleware } from "redux";
+// import thunk from "redux-thunk";
 
-import { createStore } from "redux";
-import throttle from "lodash/throttle";
-import { loadState, saveState } from "../reducers/localStorage";
+// import { loadState, saveState } from "../reducers/localStorage";
+import { logger } from "../middlewares/completedItemsMIddleware";
+// import { addLocalStorage } from "../middlewares/addLocalStorage";
 
-const configureStore = () => {
-  const persistedState = loadState();
-  const store = createStore(
-    todosReducer,
-    persistedState,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-  );
+// const configureStore = () => {
+//   const persistedState = loadState();
+//   const store = createStore(
+//     todosReducer,
+//     persistedState,
+//     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+//   );
 
-  store.subscribe(
-    throttle(() => {
-      saveState({
-        tasks: store.getState().tasks,
-      });
-    }, 1000)
-  );
+//   store.subscribe(() => {
+//     saveState({
+//       tasks: store.getState().tasks,
+//     });
+//   });
 
-  return store;
-};
+//   return store;
+// };
 
-export default configureStore;
+export const store = createStore(todosReducer, applyMiddleware(logger));
+
+// export default configureStore;
