@@ -6,7 +6,6 @@ import { useSelector } from "react-redux";
 import "./todoElements.css";
 
 const TodoElements = () => {
-  console.log("render TodoElementssss");
   const visibilityFilter = useSelector((state) => state.visibilityFilters);
   const todos = useSelector((state) => TodoSelector(state.tasks, visibilityFilter));
 

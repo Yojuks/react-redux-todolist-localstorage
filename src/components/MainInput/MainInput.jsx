@@ -12,8 +12,6 @@ const MainInput = () => {
   const [value, setValue] = useState("");
   const dispatch = useDispatch();
 
-  console.log("render MainInput");
-
   const onSubmit = () => {
     if (value) {
       dispatch(addTodoElement(value));

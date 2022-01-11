@@ -3,7 +3,7 @@ import { Provider } from "react-redux";
 import MainInput from "./components/MainInput/MainInput";
 import { store } from "./store/store";
 import TodoElements from "./components/TodoElements/TodoElements";
-import FilteredButtons from "./components/FilteredButtons/FilteredButtons";
+import FilteringButtons from "./components/FilteredButtons/FilteringButtons";
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <div className="App">
         <MainInput />
         <TodoElements />
-        <FilteredButtons />
+        <FilteringButtons />
       </div>
     </Provider>
   );

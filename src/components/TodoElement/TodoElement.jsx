@@ -4,7 +4,6 @@ import { useDispatch } from "react-redux";
 import { Checkbox } from "antd";
 
 const TodoElement = ({ todo }) => {
-  console.log("render TodoElement");
   const dispatch = useDispatch();
 
   const onDelete = (id) => {
