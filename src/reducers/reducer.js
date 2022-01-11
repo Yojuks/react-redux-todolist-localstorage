@@ -1,15 +1,15 @@
 const initialState = {
   tasks: [
-    // {
-    //   title: "first",
-    //   id: "1",
-    //   checked: false,
-    // },
-    // {
-    //   title: "second",
-    //   id: "12",
-    //   checked: false,
-    // },
+    {
+      title: "first",
+      id: "1",
+      checked: false,
+    },
+    {
+      title: "second",
+      id: "12",
+      checked: false,
+    },
   ],
   visibilityFilters: "all",
 };
