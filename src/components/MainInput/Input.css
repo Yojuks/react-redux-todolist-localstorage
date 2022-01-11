@@ -1,0 +1,11 @@
+
+div .input-width {
+    width: 70%;
+    margin-top: 20px;
+}
+
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    width: 77%;
+}
